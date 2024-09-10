@@ -1,0 +1,15 @@
+type SeasonInfo = 
+ record {
+   endDate: opt text;
+   startDate: opt text;
+   year: text;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok;
+ };
+service : {
+  getSeasonInfo: () -> (SeasonInfo) query;
+  updateSeasonInfo: (SeasonInfo) -> (Result);
+}
